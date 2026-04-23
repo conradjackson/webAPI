@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentInfo>>> Get(int? id)
         {
-            if (id == null)
+            if (id == null || id == 0)
             {
                 return await _context.StudentInfos.Take(5).ToListAsync();
             }

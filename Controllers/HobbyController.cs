@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Hobby>>> Get(int? id)
         {
-            if (id == null)
+            if (id == null || id == 0)
             {
                 return await _context.Hobbies.Take(5).ToListAsync();
             }
